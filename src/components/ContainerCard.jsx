@@ -4,6 +4,7 @@ import { NamePage } from "./NamePage";
 const cardInfos = [
   {
     id: 1,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Juse",
     description: "Teste",
@@ -12,6 +13,7 @@ const cardInfos = [
   },
   {
     id: 2,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Domo",
     description: "Teste",
@@ -20,6 +22,7 @@ const cardInfos = [
   },
   {
     id: 3,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Evandro",
     description: "Teste",
@@ -28,6 +31,7 @@ const cardInfos = [
   },
   {
     id: 4,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Nandinhe",
     description: "Teste",
@@ -36,6 +40,7 @@ const cardInfos = [
   },
   {
     id: 5,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "leozinhe",
     description: "Teste",
@@ -44,6 +49,7 @@ const cardInfos = [
   },
   {
     id: 6,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "alesurf13",
     description: "Teste",
@@ -52,6 +58,7 @@ const cardInfos = [
   },
   {
     id: 1,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Juse",
     description: "Teste",
@@ -60,6 +67,7 @@ const cardInfos = [
   },
   {
     id: 2,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Domo",
     description: "Teste",
@@ -68,6 +76,7 @@ const cardInfos = [
   },
   {
     id: 3,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Evandro",
     description: "Teste",
@@ -76,6 +85,7 @@ const cardInfos = [
   },
   {
     id: 4,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Nandinhe",
     description: "Teste",
@@ -84,6 +94,7 @@ const cardInfos = [
   },
   {
     id: 5,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "leozinhe",
     description: "Teste",
@@ -92,6 +103,7 @@ const cardInfos = [
   },
   {
     id: 6,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "alesurf13",
     description: "Teste",
@@ -100,6 +112,7 @@ const cardInfos = [
   },
   {
     id: 1,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Juse",
     description: "Teste",
@@ -108,6 +121,7 @@ const cardInfos = [
   },
   {
     id: 2,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Domo",
     description: "Teste",
@@ -116,6 +130,7 @@ const cardInfos = [
   },
   {
     id: 3,
+    map_name: "Favela",
     avatar: "https://i.pravatar.cc/300",
     name: "Evandro",
     description: "Teste",
@@ -124,6 +139,7 @@ const cardInfos = [
   },
   {
     id: 4,
+    map_name: "Mirage",
     avatar: "https://i.pravatar.cc/300",
     name: "Nandinhe",
     description: "Teste",
@@ -132,6 +148,7 @@ const cardInfos = [
   },
   {
     id: 5,
+    map_name: "Dust",
     avatar: "https://i.pravatar.cc/300",
     name: "leozinhe",
     description: "Teste",
@@ -140,6 +157,7 @@ const cardInfos = [
   },
   {
     id: 6,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "alesurf13",
     description: "Teste",
@@ -148,6 +166,7 @@ const cardInfos = [
   },
   {
     id: 1,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Juse",
     description: "Teste",
@@ -156,6 +175,7 @@ const cardInfos = [
   },
   {
     id: 2,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Domo",
     description: "Teste",
@@ -164,6 +184,7 @@ const cardInfos = [
   },
   {
     id: 3,
+    map_name: "Bind",
     avatar: "https://i.pravatar.cc/300",
     name: "Evandro",
     description: "Teste",
@@ -172,6 +193,7 @@ const cardInfos = [
   },
   {
     id: 4,
+    map_name: "Fy Pool Day",
     avatar: "https://i.pravatar.cc/300",
     name: "Nandinhe",
     description: "Teste",
@@ -180,6 +202,7 @@ const cardInfos = [
   },
   {
     id: 5,
+    map_name: "Bind",
     avatar: "https://i.pravatar.cc/300",
     name: "leozinhe",
     description: "Teste",
@@ -188,6 +211,7 @@ const cardInfos = [
   },
   {
     id: 6,
+    map_name: "Ancient",
     avatar: "https://i.pravatar.cc/300",
     name: "alesurf13",
     description: "Teste",
@@ -196,6 +220,7 @@ const cardInfos = [
   },
   {
     id: 1,
+    map_name: "Bind",
     avatar: "https://i.pravatar.cc/300",
     name: "Juse",
     description: "Teste",
@@ -204,6 +229,7 @@ const cardInfos = [
   },
   {
     id: 2,
+    map_name: "Dust 2",
     avatar: "https://i.pravatar.cc/300",
     name: "Domo",
     description: "Teste",
@@ -212,6 +238,7 @@ const cardInfos = [
   },
   {
     id: 3,
+    map_name: "Ancient",
     avatar: "https://i.pravatar.cc/300",
     name: "Evandro",
     description: "Teste",
@@ -220,6 +247,7 @@ const cardInfos = [
   },
   {
     id: 4,
+    map_name: "Dust 2 só fundo",
     avatar: "https://i.pravatar.cc/300",
     name: "Nandinhe",
     description: "Teste",
@@ -228,6 +256,7 @@ const cardInfos = [
   },
   {
     id: 5,
+    map_name: "Bind",
     avatar: "https://i.pravatar.cc/300",
     name: "leozinhe",
     description: "Teste",
@@ -236,6 +265,7 @@ const cardInfos = [
   },
   {
     id: 6,
+    map_name: "Inferno",
     avatar: "https://i.pravatar.cc/300",
     name: "alesurf13",
     description: "Teste",
