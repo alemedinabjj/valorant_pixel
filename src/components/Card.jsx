@@ -1,3 +1,5 @@
+import { AiFillEye } from "react-icons/ai";
+
 export function Card() {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
@@ -13,12 +15,17 @@ export function Card() {
           <div className="text-sm font-medium text-gray-900">Juse</div>
           <div className="text-sm text-gray-500">Teste</div>
         </div>
+        <div className="ml-auto flex items-center justify-center px-2 py-1 text-xs font-medium rounded-full text-green-800 bg-green-100">
+          <AiFillEye size={20} className="ml-4 text-gray-500" />
+          <span className="ml-1 text-sm text-gray-500">100 views</span>
+        </div>
       </div>
       <div className="mt-6">
-        <p className="text-sm text-gray-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-          amet labore.
-        </p>
+        <img
+          className="w-full "
+          src="https://static.valorantzone.gg/news/2020/04/27150238/BIND.png"
+          alt=""
+        />
       </div>
     </div>
   );
