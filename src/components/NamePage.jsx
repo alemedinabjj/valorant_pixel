@@ -5,7 +5,7 @@ export function NamePage({ label }) {
         <div className="w-full border-t border-gray-300" />
       </div>
       <div className="relative flex justify-center">
-        <span className="bg-white px-3 text-lg font-medium text-gray-900">
+        <span className="bg-base px-3 text-lg font-medium text-gray-900">
           {label}
         </span>
       </div>
