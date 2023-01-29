@@ -4,6 +4,7 @@ import React from "react";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
 import { ContainerCard } from "@/components/ContainerCard";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   const [pixels, setPixels] = React.useState([]);
@@ -21,6 +22,7 @@ export default function Home() {
         <Sidebar />
         <ContainerCard />
       </main>
+      <Footer />
     </>
   );
 }
