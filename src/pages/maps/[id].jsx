@@ -3,6 +3,8 @@ import Head from "next/head";
 import { AiFillEye } from "react-icons/ai";
 import { cardInfos } from "@/data/api";
 import { DetailsContainer } from "@/components/DetailsContainer";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 
 export async function getServerSideProps(context) {
   const { id } = context.params;
@@ -37,9 +39,11 @@ export default function Maps({ id, cardMap }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Header />
       <main className="container mx-auto">
         <DetailsContainer cardMap={cardMap} />
       </main>
+      <Footer />
     </div>
   );
 }
