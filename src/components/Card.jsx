@@ -2,7 +2,10 @@ import { AiFillEye } from "react-icons/ai";
 
 export function Card({ item }) {
   return (
-    <div className="bg-white rounded-lg shadow-sm p-6">
+    <div className="bg-white rounded-lg shadow-sm p-6 relative">
+      <div className="absolute top-0 right-0 bg-primary text-white px-2 py-1 rounded-bl-lg rounded-tr-lg">
+        <span className="text-sm font-semibold">{item.map_name}</span>
+      </div>
       <div className="flex items-center">
         <div className="flex-shrink-0">
           <img className="h-12 w-12 rounded-full" src={item.avatar} alt="" />
