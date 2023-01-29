@@ -6,11 +6,12 @@ module.exports = {
       colors: {
         primary: "#E5383B", // usage: bg-primary
         base: "#F5F3F4",
+        textBase: "#ba181bff",
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

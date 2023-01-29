@@ -9,8 +9,31 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const isAuthenticated = !!user;
   const { "nextauth.token": token } = parseCookies();
+  const [loading, setLoading] = useState(false);
 
   const router = useRouter();
+
+  async function register({ email, password, firstName, lastName }) {
+    setLoading(true);
+
+    const { data } = await axios.post(process.env.BASE_URL + "/auth/register", {
+      email,
+      password,
+      firstName,
+      lastName,
+    });
+
+    const { accessToken } = data;
+
+    setCookie(undefined, "nextauth.token", accessToken, {
+      maxAge: 60 * 60 * 1, // 1 hour
+    });
+
+    setTimeout(() => {
+      setLoading(false);
+      router.push("/login");
+    }, 1000);
+  }
 
   async function signIn({ email, password }) {
     try {
@@ -24,14 +47,6 @@ export function AuthProvider({ children }) {
       setCookie(undefined, "nextauth.token", accessToken, {
         maxAge: 60 * 60 * 1, // 1 hour
       });
-
-      // setCookie(undefined, "nextauth.user", JSON.stringify(user), {
-      //   maxAge: 60 * 60 * 1, // 1 hour
-      // });
-
-      // axios.defaults.headers["Authorization"] = `Bearer ${token}`;
-      // setUser(user);
-
       router.push("/");
     } catch (err) {
       console.log("errooo", err);
@@ -51,20 +66,29 @@ export function AuthProvider({ children }) {
   }
 
   function signOut() {
+    router.push("/login");
+
     setUser(null);
     destroyCookie(undefined, "nextauth.token");
-    destroyCookie(undefined, "nextauth.user");
-
-    router.push("/");
   }
 
   useEffect(() => {
-    handleGetToken();
-  }, []);
+    if (token) {
+      handleGetToken();
+    }
+  }, [token]);
 
   return (
     <AuthContext.Provider
-      value={{ user, isAuthenticated, signIn, signOut, handleGetToken }}
+      value={{
+        user,
+        isAuthenticated,
+        signIn,
+        signOut,
+        handleGetToken,
+        register,
+        loading,
+      }}
     >
       {children}
     </AuthContext.Provider>
