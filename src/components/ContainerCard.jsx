@@ -1,5 +1,6 @@
 import { Card } from "./Card";
 import { NamePage } from "./NamePage";
+import { SelectUsage } from "./Select";
 
 const cardInfos = [
   {
@@ -280,6 +281,7 @@ export function ContainerCard() {
   return (
     <section className="flex-1">
       <NamePage label="All Pixels" />
+      <SelectUsage />
       <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
         {cardMap}
       </div>
