@@ -49,7 +49,7 @@ const Register = () => {
           value={lastName}
           name="lastName"
           label="Last Name"
-          onChange={(e) => setFirstName(e.target.value)}
+          onChange={(e) => setLastName(e.target.value)}
         />
         <InputUsage
           type="email"
