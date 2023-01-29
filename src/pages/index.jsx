@@ -1,13 +1,15 @@
 import Head from "next/head";
-import axios from "axios";
 import React from "react";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
 import { ContainerCard } from "@/components/ContainerCard";
 import { Footer } from "@/components/Footer";
+import { useAuth } from "@/Contexts/AuthProvider";
 
 export default function Home() {
-  const [pixels, setPixels] = React.useState([]);
+  const { user } = useAuth();
+
+  console.log(user);
 
   return (
     <>
@@ -26,3 +28,23 @@ export default function Home() {
     </>
   );
 }
+
+// export const ServerSideProps = async () => {
+//   const { "nextauth.token": token } = parseCookies();
+
+//   const response = axios.get(process.env.BASE_URL + "/users/token", {
+//     headers: {
+//       Authorization: `Bearer ${token}`,
+//     },
+//   });
+
+//   console.log(response);
+
+//   const data = await response.data;
+
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// };
