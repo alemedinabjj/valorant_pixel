@@ -1,4 +1,5 @@
 import { InputUsage } from "@/components/Input";
+import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { useAuth } from "@/Contexts/AuthProvider";
 import Link from "next/link";
 import { useState } from "react";
@@ -6,7 +7,7 @@ import { useState } from "react";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signIn } = useAuth();
+  const { signIn, loading } = useAuth();
 
   return (
     <div
@@ -46,10 +47,10 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button
-          className="bg-primary text-white rounded-md p-2 hover:brightness-110 transition duration-200"
+          className="bg-primary text-white rounded-md p-2 hover:brightness-110 transition duration-200 flex items-center justify-center"
           onClick={() => signIn({ email, password })}
         >
-          Login
+          {loading ? <LoadingSpinner /> : "Login"}
         </button>
 
         <div className="flex  items-center gap-2 justify-between ">

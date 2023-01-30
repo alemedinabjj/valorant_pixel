@@ -36,6 +36,8 @@ export function AuthProvider({ children }) {
   }
 
   async function signIn({ email, password }) {
+    setLoading(true);
+
     try {
       const { data } = await axios.post(process.env.BASE_URL + "/auth/login", {
         email,
@@ -47,9 +49,12 @@ export function AuthProvider({ children }) {
       setCookie(undefined, "nextauth.token", accessToken, {
         maxAge: 60 * 60 * 1, // 1 hour
       });
+
+      setLoading(false);
       router.push("/");
     } catch (err) {
-      console.log("errooo", err);
+      console.log("errooo", err.message);
+      setLoading(false);
     }
   }
 

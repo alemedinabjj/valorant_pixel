@@ -13,9 +13,12 @@ export function Header() {
     <header className="bg-primary relative">
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          <div>
+          <div className="flex items-center gap-2">
+            <img src="images/logo.png" alt="logo" className="w-20 h-14" />
             <span className="text-lg font-semibold text-gray-100 hover:text-gray-200 ">
-              <Link href="/">Valorant Pixel</Link>
+              <Link href="/">
+                FPS <span className="text-slate-900">Pixel</span>
+              </Link>
             </span>
           </div>
           <DropDownUser
