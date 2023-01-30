@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ModalUsage } from "../Modal/Modal";
 import { Container } from "./Container";
 
-export function Category({ isAdmin, label, token }) {
+export function Category({ label, token }) {
   const [open, setOpen] = useState(false);
   return (
     <>

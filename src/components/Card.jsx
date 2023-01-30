@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { AiFillEye } from "react-icons/ai";
-import ReactPlayer from "react-player";
+import dynamic from "next/dynamic";
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
+import { LoadingSpinner } from "./LoadingSpinner";
 
 export function Card({ item }) {
   return (

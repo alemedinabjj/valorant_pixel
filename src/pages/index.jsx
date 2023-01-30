@@ -28,23 +28,3 @@ export default function Home() {
     </>
   );
 }
-
-// export const ServerSideProps = async () => {
-//   const { "nextauth.token": token } = parseCookies();
-
-//   const response = axios.get(process.env.BASE_URL + "/users/token", {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   });
-
-//   console.log(response);
-
-//   const data = await response.data;
-
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// };

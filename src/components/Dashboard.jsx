@@ -29,8 +29,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export function Dashboard({ isAdmin, setCategory }) {
+export function Dashboard({ setCategory }) {
   const { user, signOut } = useAuth();
+
   return (
     <div className="flex min-h-screen flex-1 flex-col bg-gray-800 max-w-[300px]">
       <div className="flex flex-1 flex-col overflow-y-auto pt-5 pb-4">
@@ -40,6 +41,17 @@ export function Dashboard({ isAdmin, setCategory }) {
             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
             alt="Your Company"
           />
+          {user?.role === "ROLE_ADMIN" ? (
+            <div className="flex flex-col ml-4">
+              <span className="text-sm text-gray-300">Admin</span>
+              <span className="text-sm text-gray-300">Dashboard</span>
+            </div>
+          ) : (
+            <div className="flex flex-col ml-4">
+              <span className="text-sm text-gray-300">User</span>
+              <span className="text-sm text-gray-300">Dashboard</span>
+            </div>
+          )}
         </div>
         <nav
           className="mt-5 flex-1 space-y-1 bg-gray-800 px-2"

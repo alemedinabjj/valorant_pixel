@@ -14,12 +14,9 @@ export function Header() {
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <div>
-            <a
-              className="text-lg font-semibold text-gray-100 hover:text-gray-200 "
-              href="#"
-            >
-              Valorant pixel
-            </a>
+            <span className="text-lg font-semibold text-gray-100 hover:text-gray-200 ">
+              <Link href="/">Valorant Pixel</Link>
+            </span>
           </div>
           <DropDownUser
             user={user}
