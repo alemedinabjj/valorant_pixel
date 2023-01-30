@@ -20,6 +20,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+
       <main className="container mx-auto px-6 py-3 flex flex-col md:flex-row gap-28 my-10">
         <Sidebar />
         <ContainerCard />

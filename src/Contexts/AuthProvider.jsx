@@ -2,6 +2,7 @@ import { createContext, useContext, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { parseCookies, setCookie, destroyCookie } from "nookies";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const AuthContext = createContext({});
 
@@ -16,22 +17,32 @@ export function AuthProvider({ children }) {
   async function register({ email, password, firstName, lastName }) {
     setLoading(true);
 
-    const { data } = await axios.post(process.env.BASE_URL + "/auth/register", {
-      email,
-      password,
-      firstName,
-      lastName,
-    });
+    try {
+      const { data } = await axios.post(
+        process.env.BASE_URL + "/auth/register",
+        {
+          email,
+          password,
+          firstName,
+          lastName,
+        }
+      );
 
-    const { accessToken } = data;
+      const { accessToken } = data;
 
-    setCookie(undefined, "nextauth.token", accessToken, {
-      maxAge: 60 * 60 * 1, // 1 hour
-    });
+      setCookie(undefined, "nextauth.token", accessToken, {
+        maxAge: 60 * 60 * 1, // 1 hour
+      });
+    } catch (err) {
+      console.log("errooo", err.message);
+      setLoading(false);
+      toast.error("Erro ao efetuar cadastro!");
+    }
 
     setTimeout(() => {
       setLoading(false);
       router.push("/login");
+      toast.success("Cadastro efetuado com sucesso!");
     }, 1000);
   }
 
@@ -52,9 +63,11 @@ export function AuthProvider({ children }) {
 
       setLoading(false);
       router.push("/");
+      toast.success("Login efetuado com sucesso!");
     } catch (err) {
       console.log("errooo", err.message);
       setLoading(false);
+      toast.error("Erro ao efetuar login!");
     }
   }
 
