@@ -1,12 +1,12 @@
 import Link from "next/link";
+import ReactPlayer from "react-player";
 
 export function DetailsContainer({ cardMap }) {
   return (
     <>
       <div className="flex flex-col md:flex-row gap-6 mt-10">
         <div className="flex-1">
-          <img src={cardMap.image} alt="" />
-
+          <ReactPlayer className="w-full" url={cardMap.image} controls />
           <div className="flex flex-col md:flex-row gap-6 mt-6">
             <div className="flex-1">
               <h2 className="text-2xl font-semibold text-gray-900 mb-1">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AiFillEye } from "react-icons/ai";
+import ReactPlayer from "react-player";
 
 export function Card({ item }) {
   return (
@@ -24,7 +25,7 @@ export function Card({ item }) {
           </div>
         </div>
         <div className="mt-6">
-          <img className="w-full " src={item.image} alt="" />
+          <ReactPlayer url={item.image} width="100%" height="100%" controls />
         </div>
       </Link>
     </div>

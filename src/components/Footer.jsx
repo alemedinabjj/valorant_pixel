@@ -2,7 +2,7 @@ import { FiGithub, FiFacebook, FiTwitter } from "react-icons/fi";
 
 export function Footer() {
   return (
-    <footer className="bg-primary mt-2 h-full px-2 w-full md:px-16 py-10">
+    <footer className="bg-primary  h-full px-2 w-full md:px-16 py-10">
       <div className="flex justify-between items-center  container mx-auto px-6 py-3">
         <div>
           <h2 className="text-xl font-semibold text-gray-100 mb-1">
