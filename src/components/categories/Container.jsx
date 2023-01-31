@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
+import { CardGames } from "../CardGames";
 import { Pagination } from "../Pagination/Pagination";
 
 export function Container({ label }) {
@@ -29,15 +30,15 @@ export function Container({ label }) {
   return (
     <>
       <div>
-        <div>{label}</div>
-        {data?.map((item, key) => {
-          return (
-            <>
-              <div key={key}>{item.name}</div>
-              <div key={key}>{item.company}</div>
-            </>
-          );
-        })}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2 gap-5">
+          {data?.map((item, key) => {
+            return (
+              <>
+                <CardGames key={key} item={item} />
+              </>
+            );
+          })}
+        </div>
       </div>
       <Pagination
         page={page}

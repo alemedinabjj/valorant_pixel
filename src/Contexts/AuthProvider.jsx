@@ -106,6 +106,7 @@ export function AuthProvider({ children }) {
         handleGetToken,
         register,
         loading,
+        token,
       }}
     >
       {children}
