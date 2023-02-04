@@ -9,8 +9,6 @@ import { useAuth } from "@/Contexts/AuthProvider";
 export default function Home() {
   const { user } = useAuth();
 
-  console.log(user);
-
   return (
     <>
       <Head>

@@ -11,6 +11,7 @@ export function AuthProvider({ children }) {
   const isAuthenticated = !!user;
   const { "nextauth.token": token } = parseCookies();
   const [loading, setLoading] = useState(false);
+  // const isAdmin = user?.role === "ROLE_ADMIN";
 
   const router = useRouter();
 
@@ -58,7 +59,7 @@ export function AuthProvider({ children }) {
       const { accessToken } = data;
 
       setCookie(undefined, "nextauth.token", accessToken, {
-        maxAge: 60 * 60 * 1, // 1 hour
+        maxAge: 60 * 60 * 24, // 24 hours
       });
 
       setLoading(false);

@@ -10,18 +10,20 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export function CardGames({ item }) {
+export function CardGames({ item, getData, getDataMaps }) {
   const [open, setOpen] = useState(false);
-  const { token } = useAuth();
+  const { token, user } = useAuth();
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
 
+  const isAdmin = user?.role === "ROLE_ADMIN";
+
   function getInitials(name) {
-    const words = name.split(" ");
+    const words = name?.split(" ");
     let initials = "";
 
     for (const word of words) {
-      initials += word[0].toUpperCase();
+      initials += word[0]?.toUpperCase();
     }
 
     return initials;
@@ -30,33 +32,44 @@ export function CardGames({ item }) {
   async function deleteGame() {
     console.log(process.env.BASE_URL + "/games/" + item.id);
 
-    const response = await axios.delete(
-      process.env.BASE_URL + "/games/" + item.id,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    try {
+      const response = await axios.delete(
+        process.env.BASE_URL + "/games/" + item.id,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-    console.log(response);
+      getData();
+      getDataMaps();
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async function editGame() {
-    const response = await axios.put(
-      process.env.BASE_URL + "/games/" + item.id,
-      {
-        name,
-        company,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+    try {
+      const response = await axios.put(
+        process.env.BASE_URL + "/games/" + item.id,
+        {
+          name,
+          company,
         },
-      }
-    );
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-    console.log(response);
+      getData();
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   return (
@@ -89,14 +102,19 @@ export function CardGames({ item }) {
               <p className="text-gray-500">@{item.company.split(" ")}</p>
             </div>
             <div className="flex-shrink-0 pr-2">
-              <button
-                type="button"
-                className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white bg-transparent text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                onClick={() => setOpen(true)}
-              >
-                <span className="sr-only">Open options</span>
-                <EllipsisVerticalIcon className="h-5 w-5" aria-hidden="true" />
-              </button>
+              {isAdmin && (
+                <button
+                  type="button"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white bg-transparent text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                  onClick={() => setOpen(true)}
+                >
+                  <span className="sr-only">Open options</span>
+                  <EllipsisVerticalIcon
+                    className="h-5 w-5"
+                    aria-hidden="true"
+                  />
+                </button>
+              )}
             </div>
           </div>
         </li>

@@ -10,27 +10,56 @@ import {
 } from "@heroicons/react/24/outline";
 import { Avatar } from "./Avatar";
 
-const navigation = [
-  { name: "Dashboard", icon: HomeIcon, href: "#", current: true },
-  { name: "Pixels", icon: UsersIcon, href: "pixel", count: 3, current: false },
-  { name: "Maps", icon: FolderIcon, href: "maps", count: 4, current: false },
-  { name: "Games", icon: CalendarIcon, href: "games", current: false },
-  { name: "Agents", icon: InboxIcon, href: "agents", current: false },
-  {
-    name: "Users",
-    icon: ChartBarIcon,
-    href: "users",
-    count: 12,
-    current: false,
-  },
-];
-
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export function Dashboard({ setCategory }) {
+export function Dashboard({
+  setCategory,
+  totalElements,
+  totalElementsMaps,
+  totalElementsAgents,
+}) {
   const { user, signOut } = useAuth();
+
+  const navigation = [
+    { name: "Dashboard", icon: HomeIcon, href: "#", current: true },
+    {
+      name: "Pixels",
+      icon: UsersIcon,
+      href: "pixel",
+      count: 3,
+      current: false,
+    },
+    {
+      name: "Maps",
+      icon: FolderIcon,
+      href: "maps",
+      count: totalElementsMaps,
+      current: false,
+    },
+    {
+      name: "Games",
+      icon: CalendarIcon,
+      href: "games",
+      count: totalElements,
+      current: false,
+    },
+    {
+      name: "Agents",
+      icon: InboxIcon,
+      href: "agents",
+      count: totalElementsAgents,
+      current: false,
+    },
+    {
+      name: "Users",
+      icon: ChartBarIcon,
+      href: "users",
+      count: 12,
+      current: false,
+    },
+  ];
 
   return (
     <div className="flex min-h-screen flex-1 flex-col bg-gray-800 max-w-[300px]">
